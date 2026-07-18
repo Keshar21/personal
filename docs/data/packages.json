@@ -1,0 +1,104 @@
+[
+  {
+    "id": "cultural-highlights",
+    "title": "Bhutan Cultural Highlights",
+    "icon": "🐉",
+    "duration": "5 Days / 4 Nights",
+    "difficulty": "Easy",
+    "tags": ["Best Seller"],
+    "price": "$1,450",
+    "desc": "The classic first-timer's route through Paro, Thimphu and Punakha — dzongs, monasteries, and the iconic Tiger's Nest hike.",
+    "highlights": [
+      "Hike to Tiger's Nest Monastery",
+      "Tashichho & Punakha Dzongs",
+      "Buddha Dordenma statue",
+      "Local farmhouse lunch"
+    ],
+    "featured": true
+  },
+  {
+    "id": "grand-explorer",
+    "title": "Grand Bhutan Explorer",
+    "icon": "🕊️",
+    "duration": "8 Days / 7 Nights",
+    "difficulty": "Easy–Moderate",
+    "tags": [],
+    "price": "$2,650",
+    "desc": "A complete journey across five regions — from the capital to the tranquil Phobjikha Valley and sacred Bumthang.",
+    "highlights": [
+      "Paro, Thimphu & Punakha",
+      "Gangtey / Phobjikha Valley",
+      "Bumthang temple circuit",
+      "Dochula Pass (108 stupas)"
+    ],
+    "featured": true
+  },
+  {
+    "id": "druk-path-trek",
+    "title": "Druk Path Trek",
+    "icon": "🥾",
+    "duration": "7 Days / 6 Nights",
+    "difficulty": "Moderate",
+    "tags": ["Trekking"],
+    "price": "$1,980",
+    "desc": "A classic high-altitude trek between Paro and Thimphu, past alpine lakes and yak herder camps.",
+    "highlights": [
+      "6 days of guided trekking",
+      "Jimilangtsho & Simkotra lakes",
+      "Camping with full support crew",
+      "Views of Mt. Jomolhari"
+    ],
+    "featured": true
+  },
+  {
+    "id": "punakha-haa",
+    "title": "Punakha & Haa Valley Escape",
+    "icon": "⛰️",
+    "duration": "6 Days / 5 Nights",
+    "difficulty": "Easy",
+    "tags": [],
+    "price": "$1,720",
+    "desc": "Pair the historic Punakha valley with the untouched, rarely visited Haa Valley for a quieter side of Bhutan.",
+    "highlights": [
+      "Punakha Dzong & suspension bridge",
+      "Haa Valley homestay",
+      "Chele La Pass",
+      "Local archery demonstration"
+    ],
+    "featured": false
+  },
+  {
+    "id": "weekend",
+    "title": "Tiger's Nest & Thimphu Weekend",
+    "icon": "🏯",
+    "duration": "4 Days / 3 Nights",
+    "difficulty": "Easy",
+    "tags": ["Short Trip"],
+    "price": "$980",
+    "desc": "Short on time? Hit Bhutan's two biggest highlights in a long weekend.",
+    "highlights": [
+      "Tiger's Nest Monastery hike",
+      "Thimphu city tour",
+      "Weekend market visit",
+      "Traditional hot stone bath"
+    ],
+    "featured": false
+  },
+  {
+    "id": "trans-bhutan-trail",
+    "title": "Trans Bhutan Trail Trek",
+    "icon": "🛤️",
+    "duration": "10 Days / 9 Nights",
+    "difficulty": "Challenging",
+    "tags": ["Trekking"],
+    "price": "$3,200",
+    "desc": "Walk sections of the restored 400-year-old pilgrim trail that once connected Bhutan east to west.",
+    "highlights": [
+      "Historic pilgrim route sections",
+      "Remote village homestays",
+      "Trongsa & Bumthang dzongs",
+      "Full trekking support crew"
+    ],
+    "featured": false
+  }
+]

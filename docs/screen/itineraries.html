@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhutan Itineraries | Elohim Signet Travels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="Home.html" class="logo">Elohim<span>Signet</span> Travels</a>
+      <ul class="nav-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="itineraries.html" class="active">Itineraries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Day-by-Day Itineraries</h1>
+      <p>A closer look at what a typical day looks like on our most popular packages.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="itinerary-select" id="itinerary-select"></div>
+
+      <div id="itineraries-list"></div>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Want a day-by-day plan for another package?</h2>
+      <p>Send us your dates and we'll put together a full itinerary for any of our tours.</p>
+      <a href="contact.html" class="btn btn-primary">Request an Itinerary</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Elohim Signet Travels</h4>
+          <p>Licensed Bhutan tour operator crafting curated journeys through the Land of the Thunder Dragon.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="itineraries.html">Itineraries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>hello@elohimsignettravels.com</li>
+            <li>+975 2 123 456</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Elohim Signet Travels. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/render.js"></script>
+  <script src="../js/script.js"></script>
+  <script>
+    renderItinerarySelect("itinerary-select");
+    renderItineraries("itineraries-list");
+  </script>
+</body>
+</html>

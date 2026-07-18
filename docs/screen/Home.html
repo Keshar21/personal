@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elohim Signet Travels | Discover the Kingdom of Bhutan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="Home.html" class="logo">Elohim<span>Signet</span> Travels</a>
+      <ul class="nav-links">
+        <li><a href="Home.html" class="active">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="itineraries.html">Itineraries</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <h1 id="hero-title">Discover the Last Shangri-La</h1>
+      <p id="hero-text">Elohim Signet Travels designs unforgettable journeys through Bhutan — from the cliffside Tiger's Nest Monastery to hidden Himalayan valleys, guided by locals who call it home.</p>
+      <div class="hero-actions">
+        <a href="packages.html" class="btn btn-primary">View Packages</a>
+        <a href="contact.html" class="btn btn-outline">Plan My Trip</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Explore Bhutan</span>
+        <h2>Featured Destinations</h2>
+        <p>The valleys, dzongs, and monasteries that make Bhutan unlike anywhere else on earth.</p>
+      </div>
+      <div class="grid" id="featured-destinations"></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Tour Packages</span>
+        <h2>Popular Bhutan Packages</h2>
+        <p>Fixed-departure and private tours covering culture, trekking, and festivals.</p>
+      </div>
+      <div class="grid" id="featured-packages"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to visit the Kingdom of Bhutan?</h2>
+      <p>Tell us your travel dates and we'll help you plan a trip with the Sustainable Development Fee, permits, and guide included.</p>
+      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Elohim Signet Travels</h4>
+          <p>Licensed Bhutan tour operator crafting curated journeys through the Land of the Thunder Dragon.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="itineraries.html">Itineraries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>hello@elohimsignettravels.com</li>
+            <li>+975 2 123 456</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Elohim Signet Travels. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/render.js"></script>
+  <script src="../js/script.js"></script>
+  <script>
+    renderHomeHero({ titleId: "hero-title", textId: "hero-text" });
+    renderHomeFeatured({ destinationsId: "featured-destinations", packagesId: "featured-packages" });
+  </script>
+</body>
+</html>

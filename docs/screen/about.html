@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Elohim Signet Travels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="Home.html" class="logo">Elohim<span>Signet</span> Travels</a>
+      <ul class="nav-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="itineraries.html">Itineraries</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>About Elohim Signet Travels</h1>
+      <p>A licensed Bhutanese tour operator, based in Thimphu.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <span class="eyebrow">Our Story</span>
+        <h2 id="about-heading" style="color: var(--primary-dark); font-size: 2rem; margin-bottom: 16px;"></h2>
+        <div id="about-paragraphs"></div>
+        <div class="stat-row" id="about-stats"></div>
+      </div>
+      <div class="placeholder-block">🐉</div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our Values</span>
+        <h2>What guides every trip we plan</h2>
+      </div>
+      <div class="grid" id="about-values"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Let's start planning your trip to Bhutan</h2>
+      <p>Reach out and tell us what kind of journey you're dreaming of.</p>
+      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Elohim Signet Travels</h4>
+          <p>Licensed Bhutan tour operator crafting curated journeys through the Land of the Thunder Dragon.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="itineraries.html">Itineraries</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>hello@elohimsignettravels.com</li>
+            <li>+975 2 123 456</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Elohim Signet Travels. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/render.js"></script>
+  <script src="../js/script.js"></script>
+  <script>
+    renderAbout({
+      headingId: "about-heading",
+      paragraphsId: "about-paragraphs",
+      statsId: "about-stats",
+      valuesId: "about-values",
+    });
+  </script>
+</body>
+</html>
