@@ -654,11 +654,11 @@ document.getElementById("signout-btn").addEventListener("click", () => {
 
 document.getElementById("login-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const phone = document.getElementById("login-phone").value.trim();
+  const phone = document.getElementById("login-phone").value.replace(/\s+/g, "");
   const password = document.getElementById("login-password").value;
   const errorEl = document.getElementById("login-error");
 
-  if (phone === ADMIN_PHONE && password === ADMIN_PASSWORD) {
+  if (phone === ADMIN_PHONE.replace(/\s+/g, "") && password === ADMIN_PASSWORD) {
     sessionStorage.setItem(LOGIN_SESSION_KEY, "1");
     errorEl.style.display = "none";
     document.getElementById("login-screen").style.display = "none";
