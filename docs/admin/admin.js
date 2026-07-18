@@ -8,6 +8,13 @@ const API = "https://api.github.com";
 // GitHub Pages serves from — this site lives under /docs in the repo.
 const DATA_DIR = "docs/data";
 
+// Cosmetic front door only — there's no server to check this against, so
+// it lives in plain sight in this file. It's not real security; the actual
+// safeguard is the GitHub token below and keeping this page's link private.
+const ADMIN_PHONE = "+975 17 91 69 09";
+const ADMIN_PASSWORD = "elohim$ignettravels@26#";
+const LOGIN_SESSION_KEY = "esr_admin_logged_in";
+
 function getConfig() {
   try {
     return JSON.parse(localStorage.getItem(CONFIG_KEY));
@@ -639,17 +646,46 @@ document.getElementById("setup-form").addEventListener("submit", async (e) => {
 
 document.getElementById("signout-btn").addEventListener("click", () => {
   clearConfig();
+  sessionStorage.removeItem(LOGIN_SESSION_KEY);
   location.reload();
 });
 
-// ===== Init =====
+// ===== Login gate (cosmetic — see note above ADMIN_PHONE) =====
 
-(function init() {
+document.getElementById("login-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const phone = document.getElementById("login-phone").value.trim();
+  const password = document.getElementById("login-password").value;
+  const errorEl = document.getElementById("login-error");
+
+  if (phone === ADMIN_PHONE && password === ADMIN_PASSWORD) {
+    sessionStorage.setItem(LOGIN_SESSION_KEY, "1");
+    errorEl.style.display = "none";
+    document.getElementById("login-screen").style.display = "none";
+    showSetupOrDashboard();
+  } else {
+    errorEl.textContent = "Incorrect phone number or password.";
+    errorEl.style.display = "block";
+  }
+});
+
+function showSetupOrDashboard() {
   const cfg = getConfig();
   if (cfg) {
     document.getElementById("cfg-owner").value = cfg.owner;
     document.getElementById("cfg-repo").value = cfg.repo;
     document.getElementById("cfg-branch").value = cfg.branch;
     initDashboard();
+  } else {
+    document.getElementById("setup-screen").style.display = "block";
+  }
+}
+
+// ===== Init =====
+
+(function init() {
+  if (sessionStorage.getItem(LOGIN_SESSION_KEY) === "1") {
+    document.getElementById("login-screen").style.display = "none";
+    showSetupOrDashboard();
   }
 })();

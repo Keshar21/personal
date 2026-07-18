@@ -17,8 +17,29 @@
     <button id="signout-btn" class="btn btn-secondary" style="display:none;">Disconnect</button>
   </header>
 
+  <!-- Login screen: a basic front door before the GitHub connect form -->
+  <div id="login-screen" class="admin-main">
+    <div class="setup-card">
+      <h2>Admin Sign In</h2>
+      <p>Enter your admin phone number and password to continue.</p>
+
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-phone">Phone Number</label>
+          <input type="tel" id="login-phone" placeholder="+975 ..." required />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+        <p class="error-text" id="login-error"></p>
+      </form>
+    </div>
+  </div>
+
   <!-- Setup screen: shown until a repo + token are configured -->
-  <div id="setup-screen" class="admin-main">
+  <div id="setup-screen" class="admin-main" style="display:none;">
     <div class="setup-card">
       <h2>Connect to your GitHub repo</h2>
       <p>Content edits here are saved as commits directly to your site's GitHub repo. GitHub Pages will redeploy automatically (usually within about a minute).</p>
