@@ -1,0 +1,148 @@
+[
+  {
+    "id": "bhutan-taste-tour",
+    "packageId": "bhutan-taste-tour",
+    "title": "Bhutan Taste Tour",
+    "duration": "3 Days / 2 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Fly into Paro over the Himalayas, meet your guide, and visit Rinpung Dzong and the National Museum before checking into your hotel." },
+      { "day": "Day 2", "title": "Hike to Tiger's Nest Monastery", "desc": "A 4-5 hour round-trip hike to Taktsang Palphug, Bhutan's most iconic monastery, clinging to a cliff 900m above the valley." },
+      { "day": "Day 3", "title": "Kyichu Lhakhang & Departure", "desc": "Visit one of Bhutan's oldest temples before your transfer to Paro International Airport for your onward flight." }
+    ]
+  },
+  {
+    "id": "cultural-highlights",
+    "packageId": "cultural-highlights",
+    "title": "Bhutan Cultural Highlights",
+    "duration": "5 Days / 4 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Fly into Paro over the Himalayas, meet your guide, and visit Rinpung Dzong and the National Museum before checking into your hotel." },
+      { "day": "Day 2", "title": "Hike to Tiger's Nest Monastery", "desc": "A 4-5 hour round-trip hike to Taktsang Palphug, Bhutan's most iconic monastery, clinging to a cliff 900m above the valley." },
+      { "day": "Day 3", "title": "Drive to Thimphu", "desc": "Visit the Buddha Dordenma statue, Tashichho Dzong, and the weekend market, then explore the capital's handicraft shops." },
+      { "day": "Day 4", "title": "Dochula Pass & Punakha", "desc": "Cross Dochula Pass (108 chortens, Himalayan views) en route to Punakha Dzong and the longest suspension bridge in Bhutan." },
+      { "day": "Day 5", "title": "Departure", "desc": "Transfer back to Paro International Airport for your onward flight." }
+    ]
+  },
+  {
+    "id": "punakha-haa",
+    "packageId": "punakha-haa",
+    "title": "Punakha & Haa Valley Escape",
+    "duration": "6 Days / 5 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Fly into Paro, meet your guide, and visit Rinpung Dzong before checking into your hotel." },
+      { "day": "Day 2", "title": "Drive to Thimphu", "desc": "Buddha Dordenma statue, Tashichho Dzong, and the National Memorial Chorten in Bhutan's capital." },
+      { "day": "Day 3", "title": "Thimphu to Punakha via Dochula Pass", "desc": "Stop at the 108-chorten pass before descending to Punakha Dzong and its riverside suspension bridge." },
+      { "day": "Day 4", "title": "Punakha to Haa Valley via Chele La Pass", "desc": "Cross Chele La, one of Bhutan's highest motorable passes, into the quiet, rarely visited Haa Valley." },
+      { "day": "Day 5", "title": "Haa Valley Homestay", "desc": "A full day in Haa — a local farmhouse homestay, village walk, and a traditional archery demonstration." },
+      { "day": "Day 6", "title": "Return to Paro & Departure", "desc": "Drive back over Chele La to Paro for your transfer to the airport." }
+    ]
+  },
+  {
+    "id": "grand-explorer",
+    "packageId": "grand-explorer",
+    "title": "Grand Bhutan Explorer",
+    "duration": "8 Days / 7 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Scenic Himalayan flight into Paro, welcome by your guide, and an easy afternoon visiting Kyichu Lhakhang temple." },
+      { "day": "Day 2", "title": "Tiger's Nest Monastery", "desc": "Full-day hike to Taktsang Monastery with a rest stop at the halfway cafeteria overlooking the cliff." },
+      { "day": "Day 3", "title": "Thimphu City Tour", "desc": "Buddha Dordenma, Tashichho Dzong, the National Memorial Chorten, and the takin (national animal) preserve." },
+      { "day": "Day 4", "title": "Thimphu to Punakha via Dochula Pass", "desc": "Stop at the 108-chorten pass before descending to Punakha Dzong and its riverside setting." },
+      { "day": "Day 5", "title": "Punakha to Phobjikha Valley", "desc": "Drive over Lawala Pass into the glacial Phobjikha Valley, home to the rare black-necked crane." },
+      { "day": "Day 6", "title": "Phobjikha to Bumthang", "desc": "Continue east to Bumthang, Bhutan's spiritual heartland, visiting Jambay Lhakhang along the way." },
+      { "day": "Day 7", "title": "Bumthang Temple Circuit", "desc": "Explore Kurjey Lhakhang, Tamshing Monastery, and a local farmhouse for lunch and butter tea." },
+      { "day": "Day 8", "title": "Fly out from Bumthang or Paro", "desc": "Departure transfer to the airport, ending your circuit of central and western Bhutan." }
+    ]
+  },
+  {
+    "id": "weekend",
+    "packageId": "weekend",
+    "title": "Tiger's Nest & Thimphu Weekend",
+    "duration": "4 Days / 3 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Fly into Paro, meet your guide, and visit Rinpung Dzong before checking into your hotel." },
+      { "day": "Day 2", "title": "Hike to Tiger's Nest Monastery", "desc": "A 4-5 hour round-trip hike to Taktsang Palphug, Bhutan's most iconic monastery." },
+      { "day": "Day 3", "title": "Thimphu City Tour", "desc": "Day trip to the capital — weekend market, Tashichho Dzong, and a traditional hot stone bath in the evening." },
+      { "day": "Day 4", "title": "Departure", "desc": "Return to Paro and transfer to the airport for your onward flight." }
+    ]
+  },
+  {
+    "id": "druk-path-trek",
+    "packageId": "druk-path-trek",
+    "title": "Druk Path Trek",
+    "duration": "7 Days / 6 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival & Trek Briefing in Paro", "desc": "Gear check, permit processing, and an early night before the trek begins." },
+      { "day": "Day 2", "title": "Paro to Jele Dzong", "desc": "Start the trek climbing through forest to Jele Dzong at 3,400m, your first camp with views back over Paro valley." },
+      { "day": "Day 3", "title": "Jele Dzong to Jangchulakha", "desc": "A ridge walk through rhododendron forest with views of Mt. Jomolhari on clear days." },
+      { "day": "Day 4", "title": "Jangchulakha to Jimilangtsho Lake", "desc": "Trek past yak herder camps to camp beside Jimilangtsho, one of the trek's scenic alpine lakes." },
+      { "day": "Day 5", "title": "Jimilangtsho to Simkotra Lake", "desc": "A shorter, higher-altitude day camping beside Simkotra Lake at around 4,100m." },
+      { "day": "Day 6", "title": "Simkotra to Phajoding to Thimphu", "desc": "Descend past Phajoding Monastery into Thimphu, trading the tent for a hotel bed." },
+      { "day": "Day 7", "title": "Departure", "desc": "Morning at leisure in Thimphu before your transfer to Paro International Airport." }
+    ]
+  },
+  {
+    "id": "jomolhari-trek",
+    "packageId": "jomolhari-trek",
+    "title": "Jomolhari Base Camp Trek",
+    "duration": "9 Days / 8 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival & Trek Briefing in Paro", "desc": "Permit processing, gear check, and final preparations before heading into the mountains." },
+      { "day": "Day 2", "title": "Drukgyel Dzong to Sharna Zampa", "desc": "Drive to the trailhead at Drukgyel Dzong and trek alongside the Pa Chhu river to your first camp." },
+      { "day": "Day 3", "title": "Sharna to Thangthangka", "desc": "A steady climb through pine and fir forest into the shadow of Mt. Jomolhari." },
+      { "day": "Day 4", "title": "Thangthangka to Jangothang", "desc": "Trek to Jangothang, the Jomolhari base camp, with the peak dominating the skyline ahead." },
+      { "day": "Day 5", "title": "Acclimatization Day at Jangothang", "desc": "A rest day with an optional side hike toward Tshophu Lakes for closer mountain views." },
+      { "day": "Day 6", "title": "Jangothang to Lingshi", "desc": "Cross Nyile La pass (4,890m) and descend into the remote village of Lingshi." },
+      { "day": "Day 7", "title": "Lingshi to Shodu", "desc": "Trek through Lingshi's dzong and down the Thimphu Chhu valley toward Shodu." },
+      { "day": "Day 8", "title": "Shodu to Barshong & Drive to Thimphu", "desc": "Final trekking day out to the roadhead, followed by a drive into Thimphu for a well-earned hotel bed." },
+      { "day": "Day 9", "title": "Departure", "desc": "Morning at leisure before your transfer to Paro International Airport." }
+    ]
+  },
+  {
+    "id": "trans-bhutan-trail",
+    "packageId": "trans-bhutan-trail",
+    "title": "Trans Bhutan Trail Trek",
+    "duration": "10 Days / 9 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Fly into Paro, meet your guide, and visit Rinpung Dzong before your onward drive." },
+      { "day": "Day 2", "title": "Paro to Thimphu Trail Section", "desc": "Walk a restored section of the historic pilgrim trail linking Paro and the capital." },
+      { "day": "Day 3", "title": "Thimphu City Tour", "desc": "Buddha Dordenma, Tashichho Dzong, and the National Memorial Chorten." },
+      { "day": "Day 4", "title": "Dochula Pass Trail Section", "desc": "Trek a section of the trail near Dochula Pass, past its 108 memorial chortens." },
+      { "day": "Day 5", "title": "Punakha Valley Trail", "desc": "Walk trail sections through the Punakha valley, visiting Punakha Dzong along the way." },
+      { "day": "Day 6", "title": "Punakha to Trongsa", "desc": "Drive and trek toward Trongsa, home to the largest dzong in Bhutan." },
+      { "day": "Day 7", "title": "Trongsa Dzong & Village Homestay", "desc": "Explore Trongsa Dzong before an overnight homestay in a remote village along the trail." },
+      { "day": "Day 8", "title": "Trongsa to Bumthang Trail Section", "desc": "Continue east on foot toward Bumthang, Bhutan's spiritual heartland." },
+      { "day": "Day 9", "title": "Bumthang Temple Circuit", "desc": "Kurjey Lhakhang, Tamshing Monastery, and a farewell farmhouse meal." },
+      { "day": "Day 10", "title": "Departure", "desc": "Fly out from Bumthang or transfer back to Paro for your onward flight." }
+    ]
+  },
+  {
+    "id": "paro-tshechu-festival",
+    "packageId": "paro-tshechu-festival",
+    "title": "Paro Tshechu Festival Tour",
+    "duration": "6 Days / 5 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival in Paro", "desc": "Fly into Paro, meet your guide, and settle in ahead of the festival." },
+      { "day": "Day 2", "title": "Paro Tshechu Festival", "desc": "A full day at the festival grounds watching masked Cham dances performed by monks and laymen in elaborate costume." },
+      { "day": "Day 3", "title": "Hike to Tiger's Nest Monastery", "desc": "A 4-5 hour round-trip hike to Taktsang Palphug, clinging to a cliff above the Paro valley." },
+      { "day": "Day 4", "title": "Drive to Thimphu", "desc": "Buddha Dordenma statue, Tashichho Dzong, and the capital's weekend market." },
+      { "day": "Day 5", "title": "Dochula Pass & Punakha Dzong", "desc": "Cross the 108-chorten pass to Punakha Dzong and its riverside suspension bridge." },
+      { "day": "Day 6", "title": "Return to Paro & Departure", "desc": "Transfer back to Paro International Airport for your onward flight." }
+    ]
+  },
+  {
+    "id": "bhutan-photography-tour",
+    "packageId": "bhutan-photography-tour",
+    "title": "Bhutan Photography & Culture Tour",
+    "duration": "8 Days / 7 Nights",
+    "days": [
+      { "day": "Day 1", "title": "Arrival & Golden Hour at Rinpung Dzong", "desc": "Settle in, then head to Rinpung Dzong for evening light over the Paro valley." },
+      { "day": "Day 2", "title": "Sunrise Shoot at the Tiger's Nest Viewpoint", "desc": "An early start to catch first light on Taktsang Monastery before the trail crowds arrive." },
+      { "day": "Day 3", "title": "Drive to Thimphu, Sunset at Buddha Dordenma", "desc": "Travel to the capital and end the day shooting the giant Buddha statue as it lights up at dusk." },
+      { "day": "Day 4", "title": "Thimphu Portraits & Weekend Market", "desc": "Portrait sessions with local artisans and candid shots at Thimphu's lively weekend market." },
+      { "day": "Day 5", "title": "Dochula Pass at Sunrise", "desc": "Catch the 108 chortens against a clear Himalayan sunrise before continuing to Punakha." },
+      { "day": "Day 6", "title": "Punakha Dzong Golden Hour", "desc": "Shoot Punakha Dzong and its suspension bridge in the warm evening light." },
+      { "day": "Day 7", "title": "Free Morning & Village Walk", "desc": "A relaxed morning to review and edit your shots, followed by an afternoon walk through a nearby farming village." },
+      { "day": "Day 8", "title": "Departure", "desc": "Transfer back to Paro International Airport for your onward flight." }
+    ]
+  }
+]

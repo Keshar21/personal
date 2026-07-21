@@ -1,0 +1,29 @@
+{
+  "home": {
+    "heroTitle": "Experience the Magic of the Shangri-La",
+    "heroText": "Elohim Signet Travel crafts unforgettable journeys through the heart of Bhutan — from the iconic cliffside Tiger's Nest Monastery to untouched Himalayan valleys, ancient traditions, and hidden gems discovered through the eyes of locals who call this sacred land home."
+  },
+  "about": {
+    "heading": "Bhutan, shown by people who call it home",
+    "paragraphs": [
+      "Elohim Signet Travel is a licensed tour operator based in Thimphu, Bhutan. As the only country in the world that measures Gross National Happiness alongside GDP, Bhutan isn't a destination you rush through — and we don't plan it that way either.",
+      "We handle your visa, the Sustainable Development Fee, and every permit, and pair you with local guides who grew up in the valleys, monasteries, and mountain passes you'll be visiting. Whether you're here for a short cultural tour or a multi-day trek, our team is with you the entire way."
+    ],
+    "stats": [
+      { "value": "12+", "label": "Years operating in Bhutan" },
+      { "value": "3,200+", "label": "Travelers guided" },
+      { "value": "20", "label": "Districts (Dzongkhags) covered" }
+    ],
+    "values": [
+      { "title": "Licensed & Local", "desc": "Fully licensed by the Department of Tourism, Bhutan, with guides native to each region we visit." },
+      { "title": "Sustainable Travel", "desc": "We follow Bhutan's \"High Value, Low Volume\" tourism policy to help protect its culture and environment." },
+      { "title": "All-Inclusive Planning", "desc": "Visa, permits, SDF, transport, and accommodation — sorted before you land in Paro." }
+    ]
+  },
+  "contact": {
+    "email": "bhutanelohimsignettravels@gmail.com",
+    "phone": "+975 17916909",
+    "address": "Olakha, Thimphu, Kingdom of Bhutan",
+    "hours": "Mon–Fri: 9am – 6pm, Sat: 10am – 2pm (Bhutan Time, GMT+6)"
+  }
+}

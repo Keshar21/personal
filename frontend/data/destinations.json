@@ -1,0 +1,65 @@
+[
+  {
+    "id": "paro",
+    "icon": "🏯",
+    "image": "paro-taktsang.jpg",
+    "tag": "Western Bhutan",
+    "title": "Paro",
+    "desc": "Gateway to Bhutan and home to the cliffside Tiger's Nest Monastery (Taktsang) and Rinpung Dzong.",
+    "featured": true
+  },
+  {
+    "id": "thimphu",
+    "icon": "🛕",
+    "image": "thimphu-dzong.jpg",
+    "tag": "Capital City",
+    "title": "Thimphu",
+    "desc": "Bhutan's capital city — the giant Buddha Dordenma statue, Tashichho Dzong, and a lively weekend market.",
+    "featured": true
+  },
+  {
+    "id": "punakha",
+    "icon": "🏰",
+    "image": "punakha-dzong.jpg",
+    "tag": "Historic",
+    "title": "Punakha",
+    "desc": "Former capital, home to the breathtaking Punakha Dzong at the confluence of two rivers.",
+    "featured": true
+  },
+  {
+    "id": "phobjikha",
+    "icon": "🦢",
+    "image": "phobjikha-valley.jpg",
+    "tag": "Nature",
+    "title": "Phobjikha Valley (Gangtey)",
+    "desc": "A glacial valley and winter home of the rare black-necked crane, dotted with farmhouses.",
+    "featured": false
+  },
+  {
+    "id": "bumthang",
+    "icon": "🙏",
+    "image": "bumthang-valley.jpg",
+    "tag": "Spiritual Heartland",
+    "title": "Bumthang",
+    "desc": "Bhutan's most sacred valley, home to some of the country's oldest temples and monasteries.",
+    "featured": false
+  },
+  {
+    "id": "haa",
+    "icon": "⛰️",
+    "image": "haa-valley.jpg",
+    "tag": "Hidden Valley",
+    "title": "Haa Valley",
+    "desc": "One of the least visited valleys in Bhutan, only opened to tourism in 2002 — quiet and untouched.",
+    "featured": false
+  },
+  {
+    "id": "trongsa",
+    "icon": "🐉",
+    "image": "trongsa.jpg",
+    "tag": "Central Bhutan",
+    "title": "Trongsa",
+    "desc": "Home to the largest dzong in Bhutan and the ancestral seat of the Royal Family.",
+    "featured": false
+  }
+]
