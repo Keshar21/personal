@@ -889,7 +889,7 @@ document.getElementById("add-message-btn").addEventListener("click", () => openM
 async function initDashboard() {
   document.getElementById("setup-screen").style.display = "none";
   document.getElementById("dashboard").style.display = "block";
-  document.getElementById("signout-btn").style.display = "inline-block";
+  document.getElementById("header-actions").style.display = "flex";
   await loadPackages();
   await loadDestinations();
   await loadItineraries();
@@ -920,7 +920,13 @@ document.getElementById("setup-form").addEventListener("submit", async (e) => {
   }
 });
 
+document.getElementById("logout-btn").addEventListener("click", () => {
+  sessionStorage.removeItem(LOGIN_SESSION_KEY);
+  location.reload();
+});
+
 document.getElementById("signout-btn").addEventListener("click", () => {
+  if (!confirm("Disconnect from GitHub? You'll need to paste your token again next time.")) return;
   clearConfig();
   sessionStorage.removeItem(LOGIN_SESSION_KEY);
   location.reload();
