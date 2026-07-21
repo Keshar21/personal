@@ -22,7 +22,10 @@
 <body>
 
   <header class="admin-header">
-    <h1>Elohim Signet Travel — Admin</h1>
+    <div class="admin-brand">
+      <span class="logo-badge"><img src="../images/logo.png" alt="Elohim Signet Travel" /></span>
+      <h1>Elohim Signet Travel <span>— Admin</span></h1>
+    </div>
     <button id="signout-btn" class="btn btn-secondary" style="display:none;">Disconnect</button>
   </header>
 
@@ -89,6 +92,8 @@
       <button class="tab-btn active" data-tab="packages">Packages</button>
       <button class="tab-btn" data-tab="itineraries">Itineraries</button>
       <button class="tab-btn" data-tab="destinations">Destinations</button>
+      <button class="tab-btn" data-tab="bookings">Bookings</button>
+      <button class="tab-btn" data-tab="messages">Messages</button>
       <button class="tab-btn" data-tab="site">Home / About / Contact</button>
     </div>
 
@@ -105,6 +110,17 @@
     <div id="tab-destinations" class="tab-panel">
       <div class="panel-toolbar"><button class="btn btn-primary btn-sm" id="add-destination-btn">+ Add Destination</button></div>
       <div id="destinations-list"><p class="loading-text">Loading…</p></div>
+    </div>
+
+    <div id="tab-bookings" class="tab-panel">
+      <div id="booking-stats" class="admin-stats"></div>
+      <div class="panel-toolbar"><button class="btn btn-primary btn-sm" id="add-booking-btn">+ Add Booking</button></div>
+      <div id="bookings-list"><p class="loading-text">Loading…</p></div>
+    </div>
+
+    <div id="tab-messages" class="tab-panel">
+      <div class="panel-toolbar"><button class="btn btn-primary btn-sm" id="add-message-btn">+ Log Message</button></div>
+      <div id="messages-list"><p class="loading-text">Loading…</p></div>
     </div>
 
     <div id="tab-site" class="tab-panel">

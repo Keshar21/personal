@@ -139,7 +139,7 @@ function inputValue(groupNode) {
 
 // ===== State =====
 
-let state = { packages: null, itineraries: null, destinations: null, site: null };
+let state = { packages: null, itineraries: null, destinations: null, bookings: null, messages: null, site: null };
 
 // ===== Tabs =====
 
@@ -497,6 +497,270 @@ async function saveItineraries(list, message) {
   }
 }
 
+// ===== Bookings =====
+
+const BOOKING_STATUSES = ["Pending", "Confirmed", "Completed", "Cancelled"];
+const REVENUE_STATUSES = ["Confirmed", "Completed"];
+
+function selectInput(options, value) {
+  const select = el("select", {}, options.map((o) => el("option", { value: o, text: o })));
+  if (value) select.value = value;
+  return select;
+}
+
+function formatNu(amount) {
+  return "Nu. " + Number(amount || 0).toLocaleString();
+}
+
+async function loadBookings() {
+  const container = document.getElementById("bookings-list");
+  try {
+    state.bookings = await ghGetFile(`${DATA_DIR}/bookings.json`);
+    renderBookingsList();
+  } catch (e) {
+    container.innerHTML = "";
+    container.appendChild(el("p", { class: "empty-text", text: e.message }));
+  }
+}
+
+function renderBookingStats() {
+  const container = document.getElementById("booking-stats");
+  container.innerHTML = "";
+  const items = state.bookings?.value || [];
+
+  const revenue = items
+    .filter((b) => REVENUE_STATUSES.includes(b.status))
+    .reduce((sum, b) => sum + Number(b.amount || 0), 0);
+  const pendingCount = items.filter((b) => b.status === "Pending").length;
+
+  const tiles = [
+    { value: formatNu(revenue), label: "Revenue Earned" },
+    { value: String(items.length), label: "Total Bookings" },
+    { value: String(pendingCount), label: "Pending Bookings" },
+  ];
+
+  tiles.forEach((t) => {
+    container.appendChild(
+      el("div", { class: "stat-tile" }, [
+        el("span", { class: "stat-value", text: t.value }),
+        el("span", { class: "stat-label", text: t.label }),
+      ])
+    );
+  });
+}
+
+function renderBookingsList() {
+  renderBookingStats();
+  const container = document.getElementById("bookings-list");
+  container.innerHTML = "";
+  const items = state.bookings.value;
+  if (!items.length) {
+    container.appendChild(el("p", { class: "empty-text", text: "No bookings logged yet." }));
+    return;
+  }
+  items
+    .slice()
+    .sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""))
+    .forEach((booking) => {
+      const info = el("div", { class: "row-info" }, [
+        el("h4", { text: `${booking.customerName} — ${booking.packageTitle}` }),
+        el("p", {}, [
+          document.createTextNode(`${formatNu(booking.amount)} · ${booking.travelDate || "no date"} · `),
+          el("span", { class: "status-pill status-" + booking.status.toLowerCase(), text: booking.status }),
+        ]),
+      ]);
+      const editBtn = el("button", { class: "icon-btn edit", text: "Edit" });
+      editBtn.addEventListener("click", () => openBookingForm(booking));
+      const delBtn = el("button", { class: "icon-btn delete", text: "Delete" });
+      delBtn.addEventListener("click", () => deleteBooking(booking.id));
+      const actions = el("div", { class: "row-actions" }, [editBtn, delBtn]);
+      container.appendChild(el("div", { class: "admin-row" }, [info, actions]));
+    });
+}
+
+function openBookingForm(booking) {
+  const isNew = !booking;
+  const customerNameInput = textInput(booking?.customerName);
+  const contactInput = textInput(booking?.contact);
+  const packageOptions = (state.packages?.value || []).map((p) => p.title);
+  const packageSelect = selectInput(
+    packageOptions.length ? packageOptions : ["Custom"],
+    booking?.packageTitle
+  );
+  const amountInput = textInput(booking?.amount != null ? String(booking.amount) : "");
+  amountInput.type = "number";
+  const travelDateInput = textInput(booking?.travelDate);
+  travelDateInput.type = "date";
+  const statusSelect = selectInput(BOOKING_STATUSES, booking?.status || "Pending");
+  const notesInput = textareaInput(booking?.notes);
+
+  const form = el("form", {}, [
+    formGroup("Customer Name", customerNameInput),
+    formGroup("Contact (phone or email)", contactInput),
+    formGroup("Package", packageSelect),
+    formGroup("Amount (Nu.)", amountInput),
+    formGroup("Travel Date", travelDateInput),
+    formGroup("Status", statusSelect),
+    formGroup("Notes", notesInput),
+  ]);
+
+  const saveBtn = el("button", { type: "submit", class: "btn btn-primary", text: "Save" });
+  const cancelBtn = el("button", { type: "button", class: "btn btn-secondary", text: "Cancel" });
+  cancelBtn.addEventListener("click", closeModal);
+  form.appendChild(el("div", { class: "modal-actions" }, [cancelBtn, saveBtn]));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const customerName = customerNameInput.value.trim();
+    if (!customerName) return;
+    const updated = {
+      id: booking?.id || (Date.now().toString(36) + Math.random().toString(36).slice(2, 6)),
+      customerName,
+      contact: contactInput.value.trim(),
+      packageTitle: packageSelect.value,
+      amount: Number(amountInput.value) || 0,
+      travelDate: travelDateInput.value,
+      status: statusSelect.value,
+      notes: notesInput.value.trim(),
+      createdAt: booking?.createdAt || new Date().toISOString(),
+    };
+
+    const list = state.bookings.value.slice();
+    const idx = list.findIndex((b) => b.id === updated.id);
+    if (idx >= 0) list[idx] = updated;
+    else list.push(updated);
+
+    await saveBookings(list, isNew ? `Add booking: ${customerName}` : `Update booking: ${customerName}`);
+    closeModal();
+  });
+
+  openModal(isNew ? "Add Booking" : "Edit Booking", form);
+}
+
+async function deleteBooking(id) {
+  if (!confirm("Delete this booking? This can't be undone.")) return;
+  const list = state.bookings.value.filter((b) => b.id !== id);
+  await saveBookings(list, `Delete booking: ${id}`);
+}
+
+async function saveBookings(list, message) {
+  try {
+    const sha = await ghPutFile(`${DATA_DIR}/bookings.json`, list, state.bookings.sha, message);
+    state.bookings = { value: list, sha };
+    renderBookingsList();
+    toast("Saved. GitHub Pages will redeploy shortly.");
+  } catch (e) {
+    toast(e.message, true);
+  }
+}
+
+// ===== Messages =====
+
+const MESSAGE_STATUSES = ["New", "Replied", "Archived"];
+
+async function loadMessages() {
+  const container = document.getElementById("messages-list");
+  try {
+    state.messages = await ghGetFile(`${DATA_DIR}/messages.json`);
+    renderMessagesList();
+  } catch (e) {
+    container.innerHTML = "";
+    container.appendChild(el("p", { class: "empty-text", text: e.message }));
+  }
+}
+
+function renderMessagesList() {
+  const container = document.getElementById("messages-list");
+  container.innerHTML = "";
+  const items = state.messages.value;
+  if (!items.length) {
+    container.appendChild(el("p", { class: "empty-text", text: "No messages logged yet." }));
+    return;
+  }
+  items
+    .slice()
+    .sort((a, b) => (b.receivedDate || "").localeCompare(a.receivedDate || ""))
+    .forEach((msg) => {
+      const info = el("div", { class: "row-info" }, [
+        el("h4", { text: `${msg.name} · ${msg.contact}` }),
+        el("p", {}, [
+          document.createTextNode(`${msg.message.slice(0, 80)}${msg.message.length > 80 ? "…" : ""} · `),
+          el("span", { class: "status-pill status-" + msg.status.toLowerCase(), text: msg.status }),
+        ]),
+      ]);
+      const editBtn = el("button", { class: "icon-btn edit", text: "Edit" });
+      editBtn.addEventListener("click", () => openMessageForm(msg));
+      const delBtn = el("button", { class: "icon-btn delete", text: "Delete" });
+      delBtn.addEventListener("click", () => deleteMessage(msg.id));
+      const actions = el("div", { class: "row-actions" }, [editBtn, delBtn]);
+      container.appendChild(el("div", { class: "admin-row" }, [info, actions]));
+    });
+}
+
+function openMessageForm(msg) {
+  const isNew = !msg;
+  const nameInput = textInput(msg?.name);
+  const contactInput = textInput(msg?.contact);
+  const messageInput = textareaInput(msg?.message);
+  const statusSelect = selectInput(MESSAGE_STATUSES, msg?.status || "New");
+  const receivedDateInput = textInput(msg?.receivedDate || new Date().toISOString().slice(0, 10));
+  receivedDateInput.type = "date";
+
+  const form = el("form", {}, [
+    formGroup("Name", nameInput),
+    formGroup("Contact (phone or email)", contactInput),
+    formGroup("Message", messageInput),
+    formGroup("Date Received", receivedDateInput),
+    formGroup("Status", statusSelect),
+  ]);
+
+  const saveBtn = el("button", { type: "submit", class: "btn btn-primary", text: "Save" });
+  const cancelBtn = el("button", { type: "button", class: "btn btn-secondary", text: "Cancel" });
+  cancelBtn.addEventListener("click", closeModal);
+  form.appendChild(el("div", { class: "modal-actions" }, [cancelBtn, saveBtn]));
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    if (!name) return;
+    const updated = {
+      id: msg?.id || (Date.now().toString(36) + Math.random().toString(36).slice(2, 6)),
+      name,
+      contact: contactInput.value.trim(),
+      message: messageInput.value.trim(),
+      receivedDate: receivedDateInput.value,
+      status: statusSelect.value,
+    };
+
+    const list = state.messages.value.slice();
+    const idx = list.findIndex((m) => m.id === updated.id);
+    if (idx >= 0) list[idx] = updated;
+    else list.push(updated);
+
+    await saveMessages(list, isNew ? `Log message: ${name}` : `Update message: ${name}`);
+    closeModal();
+  });
+
+  openModal(isNew ? "Log Message" : "Edit Message", form);
+}
+
+async function deleteMessage(id) {
+  if (!confirm("Delete this message? This can't be undone.")) return;
+  const list = state.messages.value.filter((m) => m.id !== id);
+  await saveMessages(list, `Delete message: ${id}`);
+}
+
+async function saveMessages(list, message) {
+  try {
+    const sha = await ghPutFile(`${DATA_DIR}/messages.json`, list, state.messages.sha, message);
+    state.messages = { value: list, sha };
+    renderMessagesList();
+    toast("Saved. GitHub Pages will redeploy shortly.");
+  } catch (e) {
+    toast(e.message, true);
+  }
+}
+
 // ===== Site (home / about / contact) =====
 
 async function loadSite() {
@@ -617,6 +881,8 @@ function renderSiteForm() {
 document.getElementById("add-package-btn").addEventListener("click", () => openPackageForm(null));
 document.getElementById("add-destination-btn").addEventListener("click", () => openDestinationForm(null));
 document.getElementById("add-itinerary-btn").addEventListener("click", () => openItineraryForm(null));
+document.getElementById("add-booking-btn").addEventListener("click", () => openBookingForm(null));
+document.getElementById("add-message-btn").addEventListener("click", () => openMessageForm(null));
 
 // ===== Setup / connect flow =====
 
@@ -627,6 +893,8 @@ async function initDashboard() {
   await loadPackages();
   await loadDestinations();
   await loadItineraries();
+  await loadBookings();
+  await loadMessages();
   await loadSite();
 }
 
