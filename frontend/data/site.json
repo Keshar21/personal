@@ -10,20 +10,38 @@
       "We handle your visa, the Sustainable Development Fee, and every permit, and pair you with local guides who grew up in the valleys, monasteries, and mountain passes you'll be visiting. Whether you're here for a short cultural tour or a multi-day trek, our team is with you the entire way."
     ],
     "stats": [
-      { "value": "12+", "label": "Years operating in Bhutan" },
-      { "value": "3,200+", "label": "Travelers guided" },
-      { "value": "20", "label": "Districts (Dzongkhags) covered" }
+      {
+        "value": "12+",
+        "label": "Years operating in Bhutan"
+      },
+      {
+        "value": "3,200+",
+        "label": "Travelers guided"
+      },
+      {
+        "value": "20",
+        "label": "Districts (Dzongkhags) covered"
+      }
     ],
     "values": [
-      { "title": "Licensed & Local", "desc": "Fully licensed by the Department of Tourism, Bhutan, with guides native to each region we visit." },
-      { "title": "Sustainable Travel", "desc": "We follow Bhutan's \"High Value, Low Volume\" tourism policy to help protect its culture and environment." },
-      { "title": "All-Inclusive Planning", "desc": "Visa, permits, SDF, transport, and accommodation — sorted before you land in Paro." }
+      {
+        "title": "Licensed & Local",
+        "desc": "Fully licensed by the Department of Tourism, Bhutan, with guides native to each region we visit."
+      },
+      {
+        "title": "Sustainable Travel",
+        "desc": "We follow Bhutan's \"High Value, Low Volume\" tourism policy to help protect its culture and environment."
+      },
+      {
+        "title": "All-Inclusive Planning",
+        "desc": "Visa, permits, SDF, transport, and accommodation — sorted before you land in Paro."
+      }
     ]
   },
   "contact": {
-    "email": "bhutanelohimsignettravels@gmail.com",
+    "email": "elohimsignettravel@gmail.com",
     "phone": "+975 17916909",
     "address": "Olakha, Thimphu, Kingdom of Bhutan",
-    "hours": "Mon–Fri: 9am – 6pm, Sat: 10am – 2pm (Bhutan Time, GMT+6)"
+    "hours": "Mon–Fri: 9am – 5pm, Sat: 10am – 2pm (Bhutan Time, GMT+6)"
   }
 }
